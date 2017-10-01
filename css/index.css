@@ -1,0 +1,97 @@
+body {
+    background-color: #bebebe;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    color: #ffffff;
+}
+
+.climate_bg img {
+    display: block;
+    margin: -20px auto 0 auto;
+
+}
+
+.weathericon {
+    width: 200px;
+}
+
+.currentlyTemp {
+    width: 100%;
+    color: #c1c1c1;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+
+
+.container {
+    display: block;
+    background-image: url(../images/bg_stars.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    min-width: 200px;
+    max-width: 300px;
+    height: 400px;
+    margin: 100px auto 0 auto;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, .8);
+}
+
+.location {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 1.5em;
+    color: #c6c6c6;
+}
+
+.dropicon {
+    width: 50px;
+
+}
+
+.info_bg {
+    background-color: #000000;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px;
+    opacity: .7;
+}
+
+.info_bg th,
+td {
+    padding: 5px;
+    text-align: center;
+}
+
+.info_bg th > i {
+    font-size: 1.3em;
+}
+
+.fa-sun-o {
+    color: #e2ff41;
+}
+
+.fa-tint {
+    color: #41a0ff;
+}
+
+.fa-moon-o {
+    color: #9d9d9d;
+}
+
+.temperature {
+    color: #ffffff;
+    font-size: 4em;
+    font-weight: 700;
+    text-align: center;
+    margin-top: -40px;
+    margin-bottom: 5px;
+}
+
+.windicon {
+    width: 25px;
+}
