@@ -12,6 +12,7 @@ body {
 
 .weathericon {
     width: 200px;
+    filter: invert(100%);
 }
 
 .currentlyTemp {
