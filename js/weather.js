@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
 function getWeather(){
     if('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(function(position){
@@ -8,9 +8,6 @@ function getWeather(){
         loadWeather("Bytom, PL", "");
     }
 }
-
-
-$(document).ready(function(){
     getWeather();
 });
 
