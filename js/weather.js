@@ -1,14 +1,19 @@
-if('geotion' in navigator) {
+
+function getWeather(){
+    if('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(function(position){
         loadWeather(position.coords.latitude + ',' + position.coords.longitude);
     });
-} else {
-    loadWeather("Bytom, PL", "");
+    } else {
+        loadWeather("Bytom, PL", "");
+    }
 }
 
+
 $(document).ready(function(){
-    setInterval(getWeather, 10000);
+    getWeather();
 });
+
 function loadWeather(location, woeid){
     $.simpleWeather({
         location: location,
