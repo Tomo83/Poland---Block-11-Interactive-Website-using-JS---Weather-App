@@ -13,6 +13,7 @@ body {
 .weathericon {
     width: 200px;
     filter: invert(100%);
+    filter: blur(50%);
 }
 
 .currentlyTemp {
@@ -95,4 +96,13 @@ td {
 
 .windicon {
     width: 25px;
+}
+
+.error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #ffffff;
+    font-size: 1em;
 }
