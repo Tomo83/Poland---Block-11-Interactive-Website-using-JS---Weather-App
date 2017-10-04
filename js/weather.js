@@ -1,3 +1,11 @@
+if('geolocation' in navigator){
+    navigator.geolocation.getCurrentPosition(function(position){
+        loadWeather(position.coords.latitude + ', ' + position.coords.longitude);
+    });
+}else {
+    loadWeather('Bytom',''); //@params location, woeid
+}
+
 if('geolocation' in navigator) {
     $('.js-geolocation').show();
 }  else {
@@ -8,11 +16,6 @@ $('.js-geolocation').on('click', function(){
     navigator.geolocation.getCurrentPosition(function(position){
         loadWeather(position.coords.latitude + ', ' + position.coords.longitude);
     });
-});
-
-
-$(document).ready(function() {
-  loadWeather('Bytom',''); //@params location, woeid
 });
 
 function loadWeather(location, woeid){
