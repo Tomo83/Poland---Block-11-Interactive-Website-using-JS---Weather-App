@@ -1,9 +1,10 @@
 if('geolocation' in navigator){
     navigator.geolocation.getCurrentPosition(function(position){
+        
         loadWeather(position.coords.latitude + ', ' + position.coords.longitude);
     });
-}else {
-    loadWeather('Bytom',''); //@params location, woeid
+} else {
+    loadWeather('Bytom','');
 }
 
 if('geolocation' in navigator) {
@@ -14,6 +15,7 @@ if('geolocation' in navigator) {
 
 $('.js-geolocation').on('click', function(){
     navigator.geolocation.getCurrentPosition(function(position){
+        
         loadWeather(position.coords.latitude + ', ' + position.coords.longitude);
     });
 });
