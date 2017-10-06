@@ -1,29 +1,29 @@
-navigator.geolocation.watchPosition(function(position) {                    loadWeather(position.coords.latitude+','+position.coords.longitude); 
-},
-function (error) { 
-  if (error.code == error.PERMISSION_DENIED)
-      loadWeather('Bytom','');
-});
-
-if('geolocation' in navigator) {
+if ('geolocation' in navigator) {
     $('.js-geolocation').show();
-}  else {
+} else {
     $('.js-geolocation').hide();
 }
 
-$('.js-geolocation').on('click', function(){
-        navigator.geolocation.getCurrentPosition(function(position) {
-        loadWeather(position.coords.latitude+','+position.coords.longitude); 
+$('.js-geolocation').on('click', function () {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        loadWeather(position.coords.latitude + ',' + position.coords.longitude);
     });
 });
 
+navigator.geolocation.getCurrentPosition(function (position) {
+        loadWeather(position.coords.latitude + ',' + position.coords.longitude);
+    },
+    function (error) {
+        if (error.code == error.PERMISSION_DENIED);
+        loadWeather('Bytom', '');
+    });
 
-function loadWeather(location, woeid){
+function loadWeather(location, woeid) {
     $.simpleWeather({
         location: location,
         woeid: woeid,
         unit: 'c',
-        success: function(weather){
+        success: function (weather) {
             city = weather.city.toUpperCase() + ', ' + weather.country;
             temp = weather.temp + '&deg;<span>C</span>';
             wcode = '<img class="weathericon" src="images/weathericons/' + weather.code + '.svg">';
@@ -38,12 +38,12 @@ function loadWeather(location, woeid){
             $(".climate_bg").html(wcode);
             $(".currentlyTemp").html(currentlyTemp);
             $(".windspeed").html(wind);
-            $(".humidity").html(humidity); 
-            $(".sunrise").html(sunrise); 
-            $(".sunset").html(sunset); 
+            $(".humidity").html(humidity);
+            $(".sunrise").html(sunrise);
+            $(".sunset").html(sunset);
         },
 
-        error: function(error){
+        error: function (error) {
             $(".error").html('<p>' + error + '</p>');
         }
     });
