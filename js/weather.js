@@ -3,13 +3,12 @@ $(document).ready(function () {
     if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
                 loadWeather(position.coords.latitude + ',' + position.coords.longitude);
-            
+            $('.js-geolocation').show();
             },
             function (error) {
                 loadWeather('Bytom', '');
             });  
-    } else {
-        $('.js-geolocation').show();
+    }  else {
         $('.js-geolocation').hide();
     }
    
