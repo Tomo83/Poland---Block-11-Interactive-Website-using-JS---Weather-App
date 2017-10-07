@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
                 loadWeather(position.coords.latitude + ',' + position.coords.longitude);
@@ -11,8 +10,6 @@ $(document).ready(function () {
     } else {
         $('.js-geolocation').hide();
     }
-
-
 });
 
 $('.js-geolocation').on('click', function () {
