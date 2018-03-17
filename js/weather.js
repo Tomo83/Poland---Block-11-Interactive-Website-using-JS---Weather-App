@@ -14,6 +14,9 @@ $(document).ready(function () {
 
 $('.js-geolocation').on('click', function () {
     window.location.reload(true);
+    navigator.geolocation.getCurrentPosition(function (position) {
+        loadWeather(position.coords.latitude + ',' + position.coords.longitude);
+    });
 });
 
 function loadWeather(location, woeid) {
